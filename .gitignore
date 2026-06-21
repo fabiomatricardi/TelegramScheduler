@@ -1,0 +1,11 @@
+.env
+*.pyc
+__pycache__/
+data/
+*.db
+*.log
+.venv/
+venv/
+node_modules/
+opencode-to-openai/
+.opencode/

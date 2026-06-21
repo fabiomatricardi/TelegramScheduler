@@ -1,0 +1,9 @@
+body { background: #f8f9fa; }
+.navbar { margin-bottom: 20px; }
+.stat-card { border: none; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.stat-card h3 { font-size: 2rem; font-weight: 700; color: #333; }
+.card { border: none; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 16px; }
+.card-header { background: #fff; border-bottom: 1px solid #eee; font-weight: 600; }
+.table th { font-weight: 600; font-size: 0.85rem; text-transform: uppercase; color: #888; }
+.log-output { background: #1e1e1e; color: #d4d4d4; padding: 12px; border-radius: 6px; font-size: 0.8rem; max-height: 400px; overflow: auto; white-space: pre-wrap; word-break: break-all; }
+code { font-size: 0.85em; }
