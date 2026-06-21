@@ -88,6 +88,49 @@ uv run python -m scheduler_ui
 - **Jobs** — edit cron schedules, enable/disable, run manually
 - **Logs** — browse execution history with output and errors
 
+
+## Cron Schedule Format
+
+```
+minute hour day month day_of_week
+```
+
+| Position | Values | Description |
+|---|---|---|
+| `minute` | 0-59 | Minute of the hour |
+| `hour` | 0-23 | Hour of the day (24h format) |
+| `day` | 1-31 | Day of the month |
+| `month` | 1-12 | Month of the year |
+| `day_of_week` | 0-6 (or sun-sat) | Day of the week (0=Sunday) |
+
+### Special Characters
+
+| Symbol | Meaning | Example |
+|---|---|---|
+| `*` | Any/every value | `* * * * *` = every minute |
+| `*/n` | Every n units | `*/15 * * * *` = every 15 min |
+| `n,m` | Specific values | `0 8,12,18 * * *` = at 8am, noon, 6pm |
+| `n-m` | Range | `0 9-17 * * *` = every hour from 9am-5pm |
+
+### Common Examples
+
+```
+* * * * *        Every minute
+*/5 * * * *      Every 5 minutes
+0 * * * *        Every hour (at :00)
+0 0 * * *        Daily at midnight
+0 9 * * *        Daily at 9:00 AM
+0 9 * * 1-5      Weekdays at 9:00 AM
+0 9 * * 1        Every Monday at 9:00 AM
+30 8 * * 1-5     Weekdays at 8:30 AM
+0 8,12,18 * * *  At 8am, 12pm, and 6pm
+0 0 1 * *        First day of each month
+*/30 * * * *     Every 30 minutes
+0 */2 * * *      Every 2 hours
+```
+
+
+
 ### CLI
 
 ```bash
