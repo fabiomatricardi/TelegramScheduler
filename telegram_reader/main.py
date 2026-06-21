@@ -4,6 +4,8 @@ import logging
 from datetime import datetime
 from pathlib import Path
 
+(Path(__file__).parent / "data").mkdir(exist_ok=True)
+
 from config import (
     TELEGRAM_BOT_TOKEN, OPENCODE_GATEWAY_URL, LLM_MODEL,
     GMAIL_ADDRESS, GMAIL_APP_PASSWORD, RECIPIENT_EMAIL,
